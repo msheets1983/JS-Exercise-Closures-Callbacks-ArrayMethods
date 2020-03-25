@@ -248,7 +248,7 @@ function stringSmash(strings) {
  */
 function getFullNames(runners) {
     let fullNames = runners.map(
-        (item) => `${item.first_name}  ${item.last_name}`,
+        (item) => `${item.last_name}, ${item.first_name}`
     );
     return fullNames;
 };
