@@ -156,11 +156,10 @@ function processDuplicateFree( /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASK
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
  */
-function lowerCaseStrings(strings) {
-    const lowerCase = [];
-    strings.forEach(function(item) {
-        return lowerCase.push(item.toLowerCase());
-    })
+function lowerCaseStrings(str) {
+    let lowercase = [];
+    str.forEach((item) => lowercase.push(item.toLowerCase()));
+    return lowercase;
 }
 
 /**
@@ -178,8 +177,15 @@ function lowerCaseStrings(strings) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
  */
-function isItAnApple( /* code here */ ) {
-    /* code here */
+function isItAnApple(str) {
+    let x = str.map(function(item) {
+        if (item === "apple") {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    return x;
 }
 
 /**
@@ -198,8 +204,9 @@ function isItAnApple( /* code here */ ) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
  */
-function removeApple( /* code here */ ) {
-    /* code here */
+function removeApple(str) {
+    let noapple = str.filter((item) => item !== "apple");
+    return noapple;
 }
 
 /**
@@ -218,7 +225,10 @@ function removeApple( /* code here */ ) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
  */
 function stringSmash(strings) {
-    return stringSmash
+    let stringSmash = strings.reduce(function(acc, cv) {
+        return acc + cv;
+    });
+    return stringSmash;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -237,11 +247,10 @@ function stringSmash(strings) {
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
 function getFullNames(runners) {
-    const lastNameFirst =
-        runners.map((item) => {
-            return `${item.last_name}, ${item.first_name}`;
-        });
-    return lastNameFirst;
+    let fullNames = runners.map(
+        (item) => `${item.first_name}  ${item.last_name}`,
+    );
+    return fullNames;
 };
 
 /**
@@ -257,9 +266,8 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
  */
 function firstNamesAllCaps(runners) {
-    return runners.map(function(runners) {
-        return runners.first_name.toUpperCase();
-    });
+    let firstNamesCap = runners.map((item) => item.first_name.toUpperCase());
+    return firstNamesCap;
 }
 
 /**
